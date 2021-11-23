@@ -4,70 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PageBD">
-    <LinearLayout
-        android:id="@+id/linearLayout"
+
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/Marka"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:hint="Название продукта"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"/>
 
+    <EditText
+        android:id="@+id/Price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Цена"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Marka"
+        app:layout_constraintVertical_bias="0"
+        android:inputType="number"/>
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Price"
+        app:layout_constraintVertical_bias="0">
         <TableRow
+            android:id="@+id/row1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/shopBag"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_toLeftOf="@id/sumshopBag"
-                android:hint="Корзина"
-                android:textSize="20dp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/sumshopBag"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10px"
-                android:text=" 0"
-                android:textSize="18dp"/>
-            <TextView
-                android:id="@+id/sumsho"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="руб."
-                android:textSize="18dp"/>
-
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@android:dimen/app_icon_size">
             <Button
-                android:id="@+id/Arrange"
-                android:layout_width="wrap_content"
+                android:id="@+id/Add"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="100px"
-                android:text="Оформить заказ" />
+                android:layout_margin="20dp"
+                android:text="Добавить" />
+            <Button
+                android:id="@+id/Clear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Удалить" />
         </TableRow>
-    </LinearLayout>
+    </TableLayout>
 
     <TableLayout
-        android:id="@+id/tableLayout2"
+        android:id="@+id/tableLayout4"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
->
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        app:layout_constraintVertical_bias="0.0">
     </TableLayout>
 
     <TableLayout
         android:id="@+id/tableLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/tableLayout2"
+        app:layout_constraintBottom_toBottomOf="@+id/tableLayout4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0">
 
         <TableRow
             android:id="@+id/row2"
@@ -88,4 +97,5 @@
                 android:text="База данных"/>
         </TableRow>
     </TableLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
